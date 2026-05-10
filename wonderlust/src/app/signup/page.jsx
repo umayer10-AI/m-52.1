@@ -3,6 +3,7 @@ import React from 'react';
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import { useForm } from 'react-hook-form';
+import { authClient } from '@/lib/auth-client';
 
 const SignUpPage = () => {
 
@@ -14,6 +15,22 @@ const SignUpPage = () => {
 
     const a = async (v) => {
         console.log(v)
+
+        const { data, error } = await authClient.signUp.email({
+            name: v.name,
+            email: v.email,
+            password: v.password,
+            confirmPassword: v.confirmPassword,
+            callbackURL: "/",
+        });
+
+        if (data) {
+            alert("User signed up successfully:", data);
+        }
+        if (error) {
+            alert(error.message);
+        }
+
     }
 
     return (
