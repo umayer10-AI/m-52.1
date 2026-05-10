@@ -1,13 +1,30 @@
+ "use client"
+import { authClient } from '@/lib/auth-client';
+import { Avatar, Button } from '@heroui/react';
 import Link from 'next/link';
 import React from 'react';
 import { FaRegUser } from 'react-icons/fa';
 
 const Nav2 = () => {
+
+    const { data: session } = authClient.useSession()
+    const user = session?.user
+    console.log(user)
+
     return (
         <div className='font-semibold flex items-center gap-5'>
             <Link href={'/profile'} className='flex items-center gap-1'><FaRegUser />Profile</Link>
-            <Link href={'/login'}>Login</Link>
-            <Link href={'/signup'}>Sign Up</Link>
+            <div className='flex items-center gap-5'>
+                <Link href={'/login'}>Login</Link>
+                <Link href={'/signup'}>Sign Up</Link>
+            </div>
+            <div className='flex items-center gap-2'>
+                <Avatar size='sm'>
+                    <Avatar.Image alt="John Doe" src={user?.image} />
+                    <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+                </Avatar>
+                <Button variant='danger-soft' className={'border border-red-800'} size='sm'>Sign Out</Button>
+            </div>
         </div>
     );
 };
