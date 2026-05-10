@@ -18,16 +18,18 @@ export const getId = async (newUser) => {
 }
 
 export const updateUSer = async (id,editUser) => {
-    // const res = await fetch(`http://localhost:5000/destination/${id}`,{
-    //     method: "PATCH",
-    //     headers: {
-    //         "content-type":"application/json"
-    //     },
-    //     body: JSON.stringify(editUser)
-    // })
-    // const data = await res.json()
-    console.log(editUser)
-    // return data
+    const res = await fetch(`http://localhost:5000/destination/${id}`,{
+        method: "PUT",
+        headers: {
+            "content-type":"application/json"
+        },
+        body: JSON.stringify(editUser)
+    })
+    const data = await res.json()
+    if(data.modifiedCount > 0){
+        redirect("/destination")
+    }
+    return data
 }
 
 export const deleteUser = async (id) => {

@@ -46,6 +46,20 @@ const run = async () => {
         res.send(result)
     })
 
+    app.put('/destination/:id', async (req,res) => {
+        const id = req.params.id
+        const filter = {
+            _id: new ObjectId(id)
+        }
+        const m = req.body
+        const updateDocument = {
+            $set: m
+        }
+        const result = await userCollection.updateOne(filter,updateDocument)
+        console.log(result)
+        res.send(result)
+    })
+
     app.delete('/destination/:id', async (req,res) => {
         const id = req.params.id
         const query = {
