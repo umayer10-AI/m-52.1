@@ -26,6 +26,8 @@ const run = async () => {
     const db = client.db("umayer")
     const userCollection = db.collection("users")
 
+    app.get('/destination',async)
+
     app.post('/destination', async (req,res) => {
         const newUser = req.body
         const result = await userCollection.insertOne(newUser)
