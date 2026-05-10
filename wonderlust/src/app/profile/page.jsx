@@ -8,7 +8,7 @@ const page = () => {
 
     const { data: session } = authClient.useSession()
     const user = session?.user
-    console.log(user)
+    // console.log(user)
 
     const stats = [
     { label: 'Total Bookings', value: '12', icon: <Plane className="text-cyan-500" />, bg: 'bg-cyan-50' },
@@ -19,17 +19,17 @@ const page = () => {
 
     return (
         <div>
-            <div className="max-w-5xl mx-auto p-8 bg-slate-800 font-sans">
+            <div className="max-w-5xl mx-auto p-8 overflow-hidden rounded-xl bg-slate-800 font-sans">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-serif text-gray-900">My Profile</h1>
-        <p className="text-gray-500 mt-2">Manage your account settings and travel preferences</p>
+      <div className="mb-8 rounded-xl">
+        <h1 className="text-4xl font-serif ">My Profile</h1>
+        <p className="text-gray-400 mt-2">Manage your account settings and travel preferences</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Sidebar: Profile Card */}
-        <div className="card border border-gray-100 shadow-sm rounded-none p-6 text-center">
-          <div className="relative inline-block mx-auto mb-4">
+        <div className="card border border-cyan-500 shadow-md shadow-cyan-500 rounded-xl p-6 text-center">
+          <div className="relative inline-block mx-auto mb-2">
             <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-100">
               <img 
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
@@ -42,24 +42,24 @@ const page = () => {
             </button>
           </div>
           
-          <h2 className="text-xl font-bold text-gray-800">Sarah Mitchell</h2>
-          <div className="flex items-center justify-center gap-1 text-gray-500 text-sm mt-1 mb-6">
+          <h2 className="text-xl font-bold">{user?.name}</h2>
+          <div className="flex items-center justify-center gap-1 text-gray-400 text-sm mt-1 mb-2">
             <MapPin size={14} />
             <span>San Francisco, CA</span>
           </div>
 
-          <div className="space-y-3 text-sm border-t pt-6 text-left">
-            <div className="flex justify-between">
-              <span className="text-gray-400">Member since</span>
-              <span className="font-bold text-gray-700">Mar 2024</span>
+          <div className="space-y-3 text-sm border-t pt-2 text-left">
+            <div className="flex justify-between font-semibold">
+              <span>Member since</span>
+              <span className="font-bold text-green-500">Mar 2024</span>
             </div>
-            <div className="flex justify-between">
-              <span className="text-gray-400">Nationality</span>
-              <span className="font-bold text-gray-700">United States</span>
+            <div className="flex justify-between font-semibold">
+              <span>Nationality</span>
+              <span className="font-bold text-green-500">United States</span>
             </div>
           </div>
 
-          <Button className="w-full mt-8 rounded-xl gap-2 bg-linear-to-r from-cyan-600 to-blue-600">
+          <Button className="w-full mt-2 rounded-xl gap-2 bg-linear-to-r from-cyan-600 to-blue-600">
             <Edit3 size={18} />
             Edit Profile
           </Button>
