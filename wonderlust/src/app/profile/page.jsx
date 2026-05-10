@@ -19,7 +19,7 @@ const page = () => {
   ];
 
     return (
-        <div>
+        <div className='mt-10'>
             <div className="max-w-5xl mx-auto p-8 overflow-hidden rounded-xl bg-slate-800 font-sans">
       {/* Header */}
       <div className="mb-8 rounded-xl">
