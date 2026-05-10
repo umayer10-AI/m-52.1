@@ -4,6 +4,7 @@ import {Button, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import { useForm } from 'react-hook-form';
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 const SignUpPage = () => {
 
@@ -26,6 +27,7 @@ const SignUpPage = () => {
 
         if (data) {
             alert("User signed up successfully:", data);
+            redirect("/")
         }
         if (error) {
             alert(error.message);
