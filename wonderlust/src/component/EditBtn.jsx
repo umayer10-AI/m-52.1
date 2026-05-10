@@ -1,18 +1,19 @@
 "use client"
+import { updateUSer } from '@/lib/data';
 import { Envelope } from '@gravity-ui/icons';
 import { Button, FieldError, Input, Label,Select, ListBox, Modal, Surface, TextArea, TextField } from '@heroui/react';
 import React from 'react';
 
 const EditBtn = ({id,p}) => {
 
-    const a = (e) => {
+    const a = async (e) => {
         e.preventDefault()
 
         const formData = new FormData(e.target)
         const editUser = Object.fromEntries(formData.entries())
-        console.log(editUser)
+        // console.log(editUser)
 
-        
+        await updateUSer(id,editUser)
     }
 
     return (
