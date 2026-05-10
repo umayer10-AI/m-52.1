@@ -26,7 +26,10 @@ const run = async () => {
     const db = client.db("umayer")
     const userCollection = db.collection("users")
 
-    app.get('/destination',async)
+    app.get('/destination',async (req,res) => {
+        const result = await userCollection.find().toArray()
+        res.send(result)
+    })
 
     app.post('/destination', async (req,res) => {
         const newUser = req.body
