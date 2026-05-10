@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
-import {Check} from "@gravity-ui/icons";
-import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
+import {Button, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import { useForm } from 'react-hook-form';
 import { authClient } from '@/lib/auth-client';
 
@@ -34,7 +33,7 @@ const SignUpPage = () => {
     }
 
     return (
-        <div className='space-y-2'>
+        <div className='space-y-2 w-2/5 shadow-lg mx-auto mt-10 border border-slate-800 rounded-3xl shadow-cyan-600 p-8 '>
             <h2 className='text-center text-2xl font-semibold'>Create Account</h2>
             <h2 className='text-center text-gray-400'>Start your adventure with Wanderlust</h2>
             <Form onSubmit={handleSubmit(a)} className="flex w-90 mx-auto flex-col mt-5 gap-4" >
@@ -115,11 +114,21 @@ const SignUpPage = () => {
         <FieldError />
       </TextField>
 
-      <div className="flex gap-2">
-        <Button type="submit" className={'w-full'}>
+      <div className='space-y-2'>
+        <div className="flex gap-2">
+        <Button type="submit" size='sm' className={'w-full bg-linear-to-r from-cyan-600 to-blue-600'}>
           Create Account
         </Button>
       </div>
+
+      <h2 className='text-gray-400 text-sm text-center'>Or sign up with</h2>
+      <button type="button" class="w-full border border-gray-100 hover:bg-gray-50 text-gray-400 font-semibold py-1.5 rounded-lg flex items-center justify-center text-sm gap-3 transition-all shadow-sm">
+                <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-4 h-4" alt="Google"/>
+                Sign Up With Google
+            </button>
+      <h2 className='text-sm text-center mt-4'>Already have an account? <a href="/signin" className='text-cyan-500 hover:underline font-bold'>Sign In</a></h2>
+      </div>
+
     </Form>
         </div>
     );
