@@ -1,4 +1,5 @@
 import DeleteBtn from '@/component/DeleteBtn';
+import EditBtn from '@/component/EditBtn';
 import { getUserId } from '@/lib/data';
 import { Button, Card, CardContent } from '@heroui/react';
 import { Calendar, MapPin, Star } from 'lucide-react';
@@ -21,9 +22,7 @@ const page = async ({params}) => {
         </button>
         
         <div className="flex gap-3">
-            <button className="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-xl font-bold text-sm hover:bg-gray-200 transition">
-                <i className="fa-regular fa-pen-to-square"></i> Edit
-            </button>
+            <EditBtn id={id}></EditBtn>
             <DeleteBtn id={id}></DeleteBtn>
         </div>
     </div>
