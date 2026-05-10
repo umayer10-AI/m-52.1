@@ -9,7 +9,7 @@ const Nav2 = () => {
 
     const { data: session } = authClient.useSession()
     const user = session?.user
-    console.log(user)
+    // console.log(user)
 
     return (
         <div className='font-semibold flex items-center gap-5'>
@@ -17,13 +17,14 @@ const Nav2 = () => {
             {
                 user ? 
                 <div className='flex items-center gap-2'>
+                    <Link href={'/profile'}>
                     <Avatar size='sm'>
                         <Avatar.Image alt="John Doe" src={user?.image} />
                         <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
-                    </Avatar>
+                    </Avatar></Link>
                     <Button variant='danger-soft' onClick={async () => await authClient.signOut()} className={'border border-red-800'} size='sm'>Sign Out</Button>
                 </div> :
-                <div className='flex items-center gap-5'>
+                <div className='flex items-center gap-5'>  
                     <Link href={'/login'}>Login</Link>
                     <Link href={'/signup'}>Sign Up</Link>
                 </div>
