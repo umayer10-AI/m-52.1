@@ -14,17 +14,21 @@ const Nav2 = () => {
     return (
         <div className='font-semibold flex items-center gap-5'>
             <Link href={'/profile'} className='flex items-center gap-1'><FaRegUser />Profile</Link>
-            <div className='flex items-center gap-5'>
-                <Link href={'/login'}>Login</Link>
-                <Link href={'/signup'}>Sign Up</Link>
-            </div>
-            <div className='flex items-center gap-2'>
-                <Avatar size='sm'>
-                    <Avatar.Image alt="John Doe" src={user?.image} />
-                    <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
-                </Avatar>
-                <Button variant='danger-soft' className={'border border-red-800'} size='sm'>Sign Out</Button>
-            </div>
+            {
+                user ? 
+                <div className='flex items-center gap-2'>
+                    <Avatar size='sm'>
+                        <Avatar.Image alt="John Doe" src={user?.image} />
+                        <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+                    </Avatar>
+                    <Button variant='danger-soft' onClick={async () => await authClient.signOut()} className={'border border-red-800'} size='sm'>Sign Out</Button>
+                </div> :
+                <div className='flex items-center gap-5'>
+                    <Link href={'/login'}>Login</Link>
+                    <Link href={'/signup'}>Sign Up</Link>
+                </div>
+            }
+            
         </div>
     );
 };
