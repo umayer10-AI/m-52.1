@@ -129,7 +129,6 @@ const SignUpPage = () => {
                 <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-4 h-4" alt="Google"/>
                 Sign Up With Google
             </button>
-            
       <h2 className='text-sm text-center mt-4'>Already have an account? <Link href="/login" className='text-cyan-500 hover:underline font-bold'>Login</Link></h2>
       </div>
 
