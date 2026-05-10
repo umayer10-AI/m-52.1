@@ -16,3 +16,8 @@ export const getId = async (newUser) => {
     }
     return data
 }
+
+export const getUserId = async (id) => {
+    const res = await fetch(`http://localhost:5000/destination/${id}`)
+    return res.json()
+}

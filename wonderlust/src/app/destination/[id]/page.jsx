@@ -1,14 +1,76 @@
+import { getUserId } from '@/lib/data';
+import { Button, Card, CardContent } from '@heroui/react';
+import { Calendar, MapPin, Star } from 'lucide-react';
 import React from 'react';
 
 const page = async ({params}) => {
 
     const {id} = await params
-    console.log(id)
+    const p = await getUserId(id)
+    console.log(p)
 
     return (
-        <div>
-            
+        <div className="max-w-4xl mx-auto bg-[#1A0B2E] text-white rounded-[30px] overflow-hidden shadow-2xl border border-white/5">
+    
+    <div className="flex items-center justify-between p-5 bg-[#130822]/50 backdrop-blur-md">
+        <button className="flex items-center gap-2 text-gray-400 hover:text-white transition">
+            <i className="fa-solid fa-arrow-left"></i>
+            <p className="text-sm font-medium">Back to Destinations</p>
+        </button>
+        
+        <div className="flex gap-3">
+            <button className="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-xl font-bold text-sm hover:bg-gray-200 transition">
+                <i className="fa-regular fa-pen-to-square"></i> Edit
+            </button>
+            <button className="flex items-center gap-2 border border-red-500/50 text-red-500 px-5 py-2 rounded-xl font-bold text-sm hover:bg-red-500/10 transition">
+                <i className="fa-regular fa-trash-can"></i> Cancel
+            </button>
         </div>
+    </div>
+
+    <div className="p-2">
+        <div className="relative h-[350px] rounded-[25px] overflow-hidden">
+            <img src={p.imageUrl} alt="{p.destinationName}" className="w-full h-full object-cover "/>
+            <div className="absolute top-6 right-6 bg-[#00FF88] text-[#1A0B2E] px-4 py-1.5 rounded-full font-black text-xs shadow-lg">
+                <p>{p.category}</p>
+            </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8">
+            
+            <div className="lg:col-span-8">
+                <p className="text-gray-400 text-sm mb-1 uppercase tracking-widest">{p.country}</p>
+                <p className="text-5xl font-black mb-6 tracking-tighter">{p.destinationName}</p>
+                
+                <div className="flex items-center gap-6 mb-8 text-gray-400">
+                    <p className="flex items-center gap-2"><i className="fa-solid fa-star text-yellow-400"></i> 4.9 (234 reviews)</p>
+                    <p className="flex items-center gap-2"><i className="fa-regular fa-calendar"></i> {p.duration}</p>
+                </div>
+
+                <div className="space-y-4">
+                    <p className="text-xl font-bold text-[#F7E93F]">Overview</p>
+                    <p className="text-gray-400 leading-relaxed">{p.description}</p>
+                </div>
+            </div>
+
+            <div className="lg:col-span-4 space-y-6">
+                <div className="bg-[#130822] p-6 rounded-[25px] border border-white/5 shadow-xl">
+                    <p className="text-gray-500 text-xs font-bold mb-1 uppercase">Starting from</p>
+                    <p className="text-4xl font-black text-[#00FF88] mb-6">${p.price} <span className="text-xs text-gray-500 font-normal">/ person</span></p>
+                    
+                    <div className="bg-[#1A0B2E] p-4 rounded-xl mb-6 border border-white/5">
+                        <p className="text-[10px] text-gray-500 uppercase mb-1">Departure Date</p>
+                        <p className="font-bold">{p.departureDate}</p>
+                    </div>
+
+                    <button className="w-full bg-linear-to-r from-[#F7E93F] via-[#FB09B4] to-[#9100F8] text-white font-black py-4 rounded-xl shadow-lg hover:scale-[1.02] transition">
+                        Book Now <i className="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     );
 };
 
