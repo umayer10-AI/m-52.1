@@ -17,6 +17,15 @@ export const getId = async (newUser) => {
     return data
 }
 
+export const deleteUser = async (id) => {
+    const res = await fetch(`http://localhost:5000/destination/${id}`,{
+        method: "DELETE"
+    })
+    const data = await res.json()
+    console.log(data)
+    return data
+}
+
 export const getUserId = async (id) => {
     const res = await fetch(`http://localhost:5000/destination/${id}`)
     return res.json()

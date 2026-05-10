@@ -1,13 +1,15 @@
+import DeleteBtn from '@/component/DeleteBtn';
 import { getUserId } from '@/lib/data';
 import { Button, Card, CardContent } from '@heroui/react';
 import { Calendar, MapPin, Star } from 'lucide-react';
+import Image from 'next/image';
 import React from 'react';
 
 const page = async ({params}) => {
 
     const {id} = await params
     const p = await getUserId(id)
-    console.log(p)
+    // console.log(id)
 
     return (
         <div className="max-w-4xl mx-auto bg-[#1A0B2E] text-white rounded-[30px] overflow-hidden shadow-2xl border border-white/5">
@@ -22,15 +24,15 @@ const page = async ({params}) => {
             <button className="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-xl font-bold text-sm hover:bg-gray-200 transition">
                 <i className="fa-regular fa-pen-to-square"></i> Edit
             </button>
-            <button className="flex items-center gap-2 border border-red-500/50 text-red-500 px-5 py-2 rounded-xl font-bold text-sm hover:bg-red-500/10 transition">
-                <i className="fa-regular fa-trash-can"></i> Cancel
-            </button>
+            <DeleteBtn id={id}></DeleteBtn>
         </div>
     </div>
 
     <div className="p-2">
         <div className="relative h-[350px] rounded-[25px] overflow-hidden">
-            <img src={p.imageUrl} alt="{p.destinationName}" className="w-full h-full object-cover "/>
+            <Image width={100} height={100}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+             src={p.imageUrl} alt={p.destinationName} className="w-full h-full object-cover "/>
             <div className="absolute top-6 right-6 bg-[#00FF88] text-[#1A0B2E] px-4 py-1.5 rounded-full font-black text-xs shadow-lg">
                 <p>{p.category}</p>
             </div>
