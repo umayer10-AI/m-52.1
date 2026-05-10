@@ -27,7 +27,7 @@ export const updateUSer = async (id,editUser) => {
     })
     const data = await res.json()
     if(data.modifiedCount > 0){
-        redirect("/destination")
+        redirect(`/destination/${id}`)
     }
     return data
 }

@@ -4,7 +4,9 @@ import { getUserId } from '@/lib/data';
 import { Button, Card, CardContent } from '@heroui/react';
 import { Calendar, MapPin, Star } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { FaArrowLeftLong } from 'react-icons/fa6';
 
 const page = async ({params}) => {
 
@@ -18,7 +20,7 @@ const page = async ({params}) => {
     <div className="flex items-center justify-between p-5 bg-[#130822]/50 backdrop-blur-md">
         <button className="flex items-center gap-2 text-gray-400 hover:text-white transition">
             <i className="fa-solid fa-arrow-left"></i>
-            <p className="text-sm font-medium">Back to Destinations</p>
+            <Link href={'/destination'} className="text-sm font-medium flex items-center gap-1"><FaArrowLeftLong />Back to Destinations</Link>
         </button>
         
         <div className="flex gap-3">
