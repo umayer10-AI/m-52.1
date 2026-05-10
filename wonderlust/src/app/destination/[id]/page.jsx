@@ -22,7 +22,7 @@ const page = async ({params}) => {
         </button>
         
         <div className="flex gap-3">
-            <EditBtn id={id}></EditBtn>
+            <EditBtn id={id} p={p}></EditBtn>
             <DeleteBtn id={id}></DeleteBtn>
         </div>
     </div>
