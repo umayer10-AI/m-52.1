@@ -2,6 +2,7 @@
 import { authClient } from '@/lib/auth-client';
 import { Avatar, Button } from '@heroui/react';
 import { Calendar, DollarSign, Edit3, Globe, MapPin, Plane, User } from 'lucide-react';
+import Image from 'next/image';
 import React from 'react';
 
 const page = () => {
@@ -30,20 +31,19 @@ const page = () => {
         {/* Left Sidebar: Profile Card */}
         <div className="card border border-cyan-500 shadow-md shadow-cyan-500 rounded-xl p-6 text-center">
           <div className="relative inline-block mx-auto mb-2">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-100">
-              <img 
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" 
-                alt="Profile" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {/* <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-100"> */}
+              <Avatar className='h-25 w-25 rounded-full'>
+                    <Avatar.Image alt="John Doe" src={user?.image} />
+                        <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+                    </Avatar>
+            {/* </div> */}
             <button className="absolute bottom-1 right-1 bg-cyan-500 p-2 rounded-full text-white shadow-md">
               <User size={16} />
             </button>
           </div>
           
           <h2 className="text-xl font-bold">{user?.name}</h2>
-          <div className="flex items-center justify-center gap-1 text-gray-400 text-sm mt-1 mb-2">
+          <div className="flex items-center justify-center gap-1 text-gray-400 text-sm mb-2">
             <MapPin size={14} />
             <span>San Francisco, CA</span>
           </div>
