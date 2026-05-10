@@ -1,4 +1,5 @@
 "use client"
+import { getId } from '@/lib/data';
 import { Button, FieldError, Input, Label, ListBox, TextArea,Select, TextField } from '@heroui/react';
 import React from 'react';
 
@@ -9,6 +10,8 @@ const Add = () => {
     const formData = new FormData(e.target)
     const newUser = Object.fromEntries(formData.entries())
     console.log(newUser)
+
+    await getId(newUser)
   }
 
 
