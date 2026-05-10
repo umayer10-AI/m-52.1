@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Booking = () => {
     return (
         <div>
-            <div className="border border-cyan-600 rounded-sm overflow-hidden flex flex-col md:flex-row items-center p-4 gap-6 shadow-sm">
+            <div className="border border-cyan-600 rounded-xl overflow-hidden flex flex-col md:flex-row items-center p-6 gap-6 shadow-sm">
       {/* Image Section */}
       <div className="w-full md:w-1/3 h-48 overflow-hidden rounded-sm">
         <Image height={100} width={100}
@@ -17,14 +17,14 @@ const Booking = () => {
 
       {/* Content Section */}
       <div className="flex-1 space-y-3">
-        <div className="flex items-center gap-2 bg-green-50 text-green-600 px-3 py-1 rounded-full w-fit border border-green-100">
+        <div className="flex items-center gap-2 bg-green-200 text-green-600 px-3 py-1 rounded-full w-fit border border-green-100">
           <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center">
             <span className="text-white text-[10px]">✓</span>
           </div>
           <span className="text-sm font-medium">Confirmed</span>
         </div>
 
-        <h2 className="text-3xl font-serif font-bold text-gray-800">Maldip v</h2>
+        <h2 className="text-3xl font-serif font-bold text-cyan-500">Maldip v</h2>
         
         <div className="space-y-2 text-gray-500">
           <div className="flex items-center gap-2">
@@ -43,7 +43,7 @@ const Booking = () => {
       </div>
 
       {/* Buttons Section */}
-      <div className="flex flex-row md:flex-col gap-3 w-full md:w-auto self-end md:self-center">
+      <div className="flex gap-3">
         <button className="flex-1 flex items-center justify-center gap-2 px-6 py-2 border border-red-200 text-red-500 rounded-sm hover:bg-red-50 transition-colors">
           <XCircle size={18} />
           Cancel
