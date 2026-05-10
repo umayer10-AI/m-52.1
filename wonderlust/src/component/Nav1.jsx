@@ -9,7 +9,7 @@ const Nav1 = () => {
     const p = usePathname()
 
     return (
-        <div>
+        <div className='flex items-center gap-7'>
             <Link href={`/`}>
                 {
                     p === '/'
