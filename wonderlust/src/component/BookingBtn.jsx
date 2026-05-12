@@ -1,14 +1,15 @@
 "use client"
 import { authClient } from '@/lib/auth-client';
+import { bookingCreate } from '@/lib/data';
 import React from 'react';
 
 const BookingBtn = ({p,id}) => {
 
     const { data: session } = authClient.useSession()
     const user = session?.user
-    console.log(p)
+    // console.log(p)
 
-    const a = () => {
+    const a = async () => {
         const data = {
             userID: user.id,
             userName: user.name,
@@ -20,6 +21,7 @@ const BookingBtn = ({p,id}) => {
             country: p.country,
         }
         console.log(data)
+        await bookingCreate(data)
     }
 
     return (

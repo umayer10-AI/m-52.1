@@ -32,6 +32,11 @@ const run = async () => {
         res.send(result)
     })
 
+    app.get('/booking',async (req,res) => {
+        const result = await bookingData.find().toArray()
+        res.send(result)
+    })
+
     app.get('/destination/:id', async (req,res) => {
         const id = req.params.id
         const query = {

@@ -47,3 +47,16 @@ export const getUserId = async (id) => {
     const res = await fetch(`http://localhost:5000/destination/${id}`)
     return res.json()
 }
+
+export const bookingCreate = async (userData) => {
+    const res = await fetch(`http://localhost:5000/booking`,{
+        method: 'POST',
+        headers: {
+            'content-type':'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    const data = await res.json()
+    console.log(data)
+    return data
+}
