@@ -100,6 +100,7 @@ const SignUpPage = () => {
         <FieldError />
       </TextField>
 
+
       <TextField
         isRequired
         minLength={8}
@@ -131,7 +132,7 @@ const SignUpPage = () => {
       </div>
 
       <h2 className='text-gray-400 text-sm text-center'>Or sign up with</h2>
-      <button type="button" className="w-full border border-gray-100 hover:bg-gray-50 text-gray-400 font-semibold py-1.5 rounded-lg flex items-center justify-center text-sm gap-3 transition-all shadow-sm">
+      <button onClick={handleGoogle} type="button" className="w-full border border-gray-100 hover:bg-gray-50 text-gray-400 font-semibold py-1.5 rounded-lg flex items-center justify-center text-sm gap-3 transition-all shadow-sm">
                 <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-4 h-4" alt="Google"/>
                 Sign Up With Google
             </button>
