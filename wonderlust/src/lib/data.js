@@ -60,3 +60,8 @@ export const bookingCreate = async (userData) => {
     console.log(data)
     return data
 }
+
+export const bookingData = async () => {
+    const res = await fetch(`http://localhost:5000/booking`)
+    return res.json()
+}

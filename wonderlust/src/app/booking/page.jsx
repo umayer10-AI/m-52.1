@@ -1,7 +1,12 @@
 import Booking from '@/component/Booking';
+import { bookingData } from '@/lib/data';
 import React from 'react';
 
-const page = () => {
+const page = async () => {
+
+    const data = await bookingData()
+    console.log(data)
+
     return (
         <div>
             <div className='space-y-2 my-10 '>
