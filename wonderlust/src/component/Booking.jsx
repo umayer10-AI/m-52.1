@@ -40,7 +40,7 @@ const Booking = ({p}) => {
         </div>
 
         <div className="text-3xl font-semibold text-[#0ea5e9] pt-2">
-          $1000
+          ${p.price}
         </div>
       </div>
 
