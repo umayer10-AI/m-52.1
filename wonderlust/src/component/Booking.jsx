@@ -2,7 +2,8 @@ import React from 'react';
 import { Calendar, Eye, Tag, XCircle } from 'lucide-react';
 import Image from 'next/image';
 
-const Booking = () => {
+const Booking = ({p}) => {
+  console.log(p)
     return (
         <div>
             <div className="border border-cyan-600 rounded-xl overflow-hidden flex flex-col md:flex-row items-center p-6 gap-6 shadow-sm">
@@ -10,7 +11,7 @@ const Booking = () => {
       <div className="w-full md:w-1/3 h-48 overflow-hidden rounded-sm">
         <Image height={100} width={100}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          src="https://images.unsplash.com/photo-1772289326073-c59062a8d290?w=500&auto=format&fit=crop" 
+          src={p.image} 
           alt="Maldip" 
           className="w-full h-full object-cover"
         />
@@ -25,7 +26,7 @@ const Booking = () => {
           <span className="text-sm font-medium">Confirmed</span>
         </div>
 
-        <h2 className="text-3xl font-serif font-bold text-cyan-500">Maldip v</h2>
+        <h2 className="text-3xl font-serif font-bold text-cyan-500">{p.destinationName}</h2>
         
         <div className="space-y-2 text-gray-400">
           <div className="flex items-center gap-2">

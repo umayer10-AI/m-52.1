@@ -13,7 +13,11 @@ const page = async () => {
                 <h2 className='text-3xl font-bold'>My Booking</h2>
                 <h2 className='text-gray-400'>Manage and view your upcoming travel plans</h2>
             </div>
-            <Booking />
+            <div className='flex flex-col gap-5'>
+                {
+                    data.map(v => <Booking key={v._id} p={v}></Booking>)
+                }
+            </div>
         </div>
     );
 };
