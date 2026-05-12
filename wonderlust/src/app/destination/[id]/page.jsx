@@ -1,3 +1,4 @@
+import BookingBtn from '@/component/BookingBtn';
 import DeleteBtn from '@/component/DeleteBtn';
 import EditBtn from '@/component/EditBtn';
 import { getUserId } from '@/lib/data';
@@ -66,9 +67,7 @@ const page = async ({params}) => {
                         <p className="font-bold">{p.departureDate}</p>
                     </div>
 
-                    <button className="w-full bg-linear-to-r from-[#F7E93F] via-[#FB09B4] to-[#9100F8] text-white font-black py-4 rounded-xl shadow-lg hover:scale-[1.02] transition">
-                        Book Now <i className="fa-solid fa-arrow-right ml-2"></i>
-                    </button>
+                    <BookingBtn p={p} id={id}></BookingBtn>
                 </div>
             </div>
         </div>
