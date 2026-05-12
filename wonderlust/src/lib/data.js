@@ -74,6 +74,5 @@ export const deleteBooking = async(id) => {
     if(data.deletedCount > 0){
         redirect('/booking')
     }
-    
     return data
 }
