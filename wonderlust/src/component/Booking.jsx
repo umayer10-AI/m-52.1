@@ -1,6 +1,8 @@
+"use client"
 import React from 'react';
 import { Calendar, Eye, Tag, XCircle } from 'lucide-react';
 import Image from 'next/image';
+import { deleteBooking } from '@/lib/data';
 
 const Booking = ({p}) => {
   console.log(p)
@@ -50,7 +52,7 @@ const Booking = ({p}) => {
 
       {/* Buttons Section */}
       <div className="flex gap-3">
-        <button className="flex-1 flex items-center font-semibold justify-center gap-2 px-6 py-2 border border-red-300 text-red-500 rounded-sm hover:bg-red-50 transition-colors">
+        <button onClick={() => deleteBooking(p._id)} className="flex-1 flex items-center font-semibold justify-center gap-2 px-6 py-2 border border-red-300 text-red-500 rounded-sm hover:bg-red-50 transition-colors">
           <XCircle size={18} />
           Cancel
         </button>

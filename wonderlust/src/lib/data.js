@@ -66,6 +66,9 @@ export const bookingData = async () => {
     return res.json()
 }
 
-// export const deleteBooking = async(id) => {
-//     const res = await fetch(`http://localhost:5000/booking/${id}`)
-// }
+export const deleteBooking = async(id) => {
+    // const res = await fetch(`http://localhost:5000/booking/${id}`)
+    // const data = res.json()
+    console.log(id)
+    // return data
+}
