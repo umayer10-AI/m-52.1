@@ -31,12 +31,10 @@ const page = () => {
         {/* Left Sidebar: Profile Card */}
         <div className="card border border-cyan-500 shadow-md shadow-cyan-500 rounded-xl p-6 text-center">
           <div className="relative inline-block mx-auto mb-2">
-            {/* <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-100"> */}
               <Avatar className='h-25 w-25 rounded-full'>
                     <Avatar.Image alt="John Doe" src={user?.image} />
                         <Avatar.Fallback className='text-4xl'>{user?.name.charAt(0)}</Avatar.Fallback>
                     </Avatar>
-            {/* </div> */}
             <button className="absolute bottom-1 right-1 bg-cyan-500 p-2 rounded-full text-white shadow-md">
               <User size={16} />
             </button>

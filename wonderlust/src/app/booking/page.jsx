@@ -1,6 +1,4 @@
 import Booking from '@/component/Booking';
-import { Book, Calendar, Eye, Tag, XCircle } from 'lucide-react';
-import Image from 'next/image';
 import React from 'react';
 
 const page = () => {
