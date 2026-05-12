@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nevbar from "@/component/Nevbar";
 import Footer from "@/component/Footer";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <Nevbar></Nevbar>
         <main className="w-[80%] mx-auto">{children}</main>
         <Footer></Footer>
+        <Toaster />
         </body>
     </html>
   );

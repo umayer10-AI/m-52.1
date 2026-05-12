@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation"
+import toast from "react-hot-toast"
 
 export const getId = async (newUser) => {
     // console.log(newUser)
@@ -57,7 +58,7 @@ export const bookingCreate = async (userData) => {
         body: JSON.stringify(userData)
     })
     const data = await res.json()
-    console.log(data)
+    toast.success("Data Successfully Added")
     return data
 }
 
@@ -72,6 +73,7 @@ export const deleteBooking = async(id) => {
     })
     const data = await res.json()
     if(data.deletedCount > 0){
+        toast.success("Deleted")
         redirect('/booking')
     }
     return data
