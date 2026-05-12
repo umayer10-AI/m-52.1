@@ -25,6 +25,7 @@ const run = async () => {
 
     const db = client.db("umayer")
     const userCollection = db.collection("users")
+    const bookingData = db.collection("booking")
 
     app.get('/destination',async (req,res) => {
         const result = await userCollection.find().toArray()
@@ -43,6 +44,12 @@ const run = async () => {
     app.post('/destination', async (req,res) => {
         const newUser = req.body
         const result = await userCollection.insertOne(newUser)
+        res.send(result)
+    })
+
+    app.post('/booking', async (req,res) => {
+        const b = req.body
+        const result = await bookingData.insertOne(b)
         res.send(result)
     })
 

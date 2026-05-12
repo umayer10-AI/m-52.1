@@ -9,17 +9,17 @@ const BookingBtn = ({p,id}) => {
     console.log(p)
 
     const a = () => {
-        // const data = {
-        //     userID: user.id,
-        //     userName: user.name,
-        //     userImage: user.image,
-        //     destinationId: p._id,
-        //     destinationName: p.destinationName,
-        //     price: p.price,
-        //     image: p.imageUrl,
-        //     country: p.country,
-        // }
-
+        const data = {
+            userID: user.id,
+            userName: user.name,
+            userImage: user.image,
+            destinationId: p._id,
+            destinationName: p.destinationName,
+            price: p.price,
+            image: p.imageUrl,
+            country: p.country,
+        }
+        console.log(data)
     }
 
     return (
