@@ -20,7 +20,6 @@ const Booking = ({p}) => {
         />
       </div>
 
-      {/* Content Section */}
       <div className="flex-1 space-y-3">
         <div className="flex items-center gap-2 bg-green-200 text-green-600 px-3 py-1 rounded-full w-fit border border-green-100">
           <div className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center">
