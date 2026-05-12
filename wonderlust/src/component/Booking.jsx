@@ -6,12 +6,11 @@ import { deleteBooking } from '@/lib/data';
 import { AlertDialog, Button } from '@heroui/react';
 
 const Booking = ({p}) => {
-  console.log(p)
     return (
         <div>
             <div className="border border-cyan-600 rounded-xl overflow-hidden flex flex-col md:flex-row items-center p-6 gap-6 shadow-sm">
       
-      
+
       <div className="w-full md:w-1/3 h-48 overflow-hidden rounded-sm">
         <Image height={100} width={100}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
