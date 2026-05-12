@@ -1,10 +1,8 @@
 import BookingBtn from '@/component/BookingBtn';
 import DatePage from '@/component/Date';
-import Date from '@/component/Date';
 import DeleteBtn from '@/component/DeleteBtn';
 import EditBtn from '@/component/EditBtn';
 import { getUserId } from '@/lib/data';
-import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
