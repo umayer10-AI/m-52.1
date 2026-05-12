@@ -1,10 +1,10 @@
 import BookingBtn from '@/component/BookingBtn';
+import DatePage from '@/component/Date';
+import Date from '@/component/Date';
 import DeleteBtn from '@/component/DeleteBtn';
 import EditBtn from '@/component/EditBtn';
 import { getUserId } from '@/lib/data';
-import { Button, Card, CardContent } from '@heroui/react';
 import { format } from 'date-fns';
-import { Calendar, MapPin, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -12,9 +12,12 @@ import { FaArrowLeftLong } from 'react-icons/fa6';
 
 const page = async ({params}) => {
 
+    
     const {id} = await params
     const p = await getUserId(id)
-    // console.log(id)
+    console.log(p)
+
+    // const date = format(new Date(), "EEE, dd, MMM, yyyy")
 
     return (
         <div className="max-w-4xl mx-auto bg-[#1A0B2E] text-white rounded-[30px] overflow-hidden shadow-2xl border border-white/5">
@@ -66,7 +69,7 @@ const page = async ({params}) => {
                     <div className="bg-[#1A0B2E] p-4 rounded-xl mb-6 border border-white/5">
                         <p className="text-[10px] text-gray-500 uppercase mb-1">Departure Date</p>
                         {/* <p className="font-bold">{p.departureDate}</p> */}
-                        <p className="font-bold">{format(new Date(), "EEE, dd, MMM, yyyy")}</p>
+                        <DatePage date={p.departureDate}></DatePage>
                     </div>
 
                     <BookingBtn p={p} id={id}></BookingBtn>
