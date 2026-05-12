@@ -3,6 +3,7 @@ import React from 'react';
 import { Calendar, Eye, Tag, XCircle } from 'lucide-react';
 import Image from 'next/image';
 import { deleteBooking } from '@/lib/data';
+import { AlertDialog, Button } from '@heroui/react';
 
 const Booking = ({p}) => {
   console.log(p)
@@ -52,10 +53,35 @@ const Booking = ({p}) => {
 
       {/* Buttons Section */}
       <div className="flex gap-3">
-        <button onClick={() => deleteBooking(p._id)} className="flex-1 flex items-center font-semibold justify-center gap-2 px-6 py-2 border border-red-300 text-red-500 rounded-sm hover:bg-red-50 transition-colors">
-          <XCircle size={18} />
-          Cancel
-        </button>
+        <AlertDialog>
+      <Button variant="danger">Delete</Button>
+      <AlertDialog.Backdrop>
+        <AlertDialog.Container>
+          <AlertDialog.Dialog className="sm:max-w-[400px]">
+            <AlertDialog.CloseTrigger />
+            <AlertDialog.Header>
+              <AlertDialog.Icon status="danger" />
+              <AlertDialog.Heading>Delete project permanently?</AlertDialog.Heading>
+            </AlertDialog.Header>
+            <AlertDialog.Body>
+              <p>
+                This will permanently delete <strong>My Awesome Project</strong> and all of its
+                data. This action cannot be undone.
+              </p>
+            </AlertDialog.Body>
+            <AlertDialog.Footer>
+              <Button slot="close" variant="tertiary">
+                Cancel
+              </Button>
+              <Button onClick={() => deleteBooking(p._id)} slot="close" variant="danger">
+                Delete
+              </Button>
+            </AlertDialog.Footer>
+          </AlertDialog.Dialog>
+        </AlertDialog.Container>
+      </AlertDialog.Backdrop>
+    </AlertDialog>
+
         <button className="flex-1 flex items-center justify-center gap-2 px-6 py-2 bg-[#17a2b8] text-white rounded-sm hover:bg-[#138496] transition-colors font-medium">
           <Eye size={18} />
           View
