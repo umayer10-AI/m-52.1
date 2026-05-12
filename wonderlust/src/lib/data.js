@@ -70,7 +70,9 @@ export const deleteBooking = async(id) => {
     const res = await fetch(`http://localhost:5000/booking/${id}`,{
         method: "DELETE"
     })
-    const data = res.json()
-    console.log(id)
+    const data = await res.json()
+    if(data.deletedCount > 0){
+        redirect('/booking')
+    }
     return data
 }
