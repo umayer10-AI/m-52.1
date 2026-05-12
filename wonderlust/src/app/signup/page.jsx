@@ -35,6 +35,12 @@ const SignUpPage = () => {
 
     }
 
+    const handleGoogle = async () => {
+            const data = await authClient.signIn.social({
+              provider: "google",
+            });
+        }
+
     return (
         <div className='space-y-2 w-2/5 shadow-lg mx-auto mt-10 border border-slate-800 rounded-3xl shadow-cyan-600 p-8 '>
             <h2 className='text-center text-2xl font-semibold'>Create Account</h2>
