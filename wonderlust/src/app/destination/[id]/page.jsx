@@ -3,6 +3,7 @@ import DeleteBtn from '@/component/DeleteBtn';
 import EditBtn from '@/component/EditBtn';
 import { getUserId } from '@/lib/data';
 import { Button, Card, CardContent } from '@heroui/react';
+import { format } from 'date-fns';
 import { Calendar, MapPin, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -64,7 +65,8 @@ const page = async ({params}) => {
                     
                     <div className="bg-[#1A0B2E] p-4 rounded-xl mb-6 border border-white/5">
                         <p className="text-[10px] text-gray-500 uppercase mb-1">Departure Date</p>
-                        <p className="font-bold">{p.departureDate}</p>
+                        {/* <p className="font-bold">{p.departureDate}</p> */}
+                        <p className="font-bold">{format(new Date(), "EEE, dd, MMM, yyyy")}</p>
                     </div>
 
                     <BookingBtn p={p} id={id}></BookingBtn>
