@@ -51,7 +51,6 @@ const Booking = ({p}) => {
         </div>
       </div>
 
-      {/* Buttons Section */}
       <div className="flex gap-3">
         <AlertDialog>
       <Button variant="danger">Delete</Button>
