@@ -28,7 +28,7 @@ const page = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Left Sidebar: Profile Card */}
+        
         <div className="card border border-cyan-500 shadow-md shadow-cyan-500 rounded-xl p-6 text-center">
           <div className="relative inline-block mx-auto mb-2">
               <Avatar className='h-25 w-25 rounded-full'>
